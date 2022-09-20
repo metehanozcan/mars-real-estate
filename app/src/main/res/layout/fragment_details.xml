@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="estateList"
+            type="com.kenbu.marssale.model.RealEstateModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="0dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/itemView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_344sdp"
+            android:get_api_image="@{estateList.img_src}"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundedCornersImageViewDetail" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/back_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/transparent"
+            app:icon="@drawable/back_arr"
+            app:iconGravity="textTop"
+            app:layout_constraintStart_toStartOf="@id/itemView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_status_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_14sdp"
+            android:fontFamily="@font/lora"
+
+            android:textColor="@color/white"
+            android:textFontWeight="700"
+            android:textSize="@dimen/_21ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/itemView"
+            tools:text="Test"
+            tools:textColor="@color/black" />
+<!-- android:text="@{estateList.type}"-->
+        <View
+            android:id="@+id/view"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemView" />
+
+        <TextView
+            android:id="@+id/land_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginTop="72dp"
+            android:fontFamily="@font/roboto"
+            android:text="@{estateList.id}"
+            android:textSize="@dimen/_23ssp"
+            tools:text="Test"
+            tools:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/map_icon"
+            app:layout_constraintTop_toBottomOf="@+id/itemView" />
+
+        <TextView
+            android:id="@+id/land_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="73dp"
+            android:layout_marginEnd="@dimen/_14sdp"
+            android:fontFamily="@font/roboto"
+            android:text="@{String.valueOf(estateList.price)+`$`}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20ssp"
+            tools:text="Test"
+            tools:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemView" />
+
+        <ImageView
+            android:id="@+id/map_icon"
+            android:layout_width="@dimen/_34sdp"
+            android:layout_height="@dimen/_34sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_54sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemView"
+            app:srcCompat="@drawable/plot1" />
+
+
+        <TextView
+            android:id="@+id/details_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_111sdp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/buy_now_be_martian"
+            android:textColor="@color/black"
+            android:textFontWeight="500"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemView" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buy_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_27sdp"
+            android:backgroundTint="#090A0A"
+            android:fontFamily="@font/nunito"
+            android:gravity="center_vertical"
+            android:text="@string/buy_now_button"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            app:icon="@drawable/ic_shop_cart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/details_text" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

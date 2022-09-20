@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">marssale</string>
+    <string name="welcome_title">MARS ESTATE</string>
+    <string name="welcome_button_text">Get Started</string>
+    <string name="welcome_subtitle">Let’s Explore the\n<font fgcolor='#F9AD1A'>Solar System</font>\nwith<font fgcolor='#F9AD1A'> Explorer</font></string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="buy_now_be_martian">BUY NOW, BE MARTIAN</string>
+    <string name="buy_now_button">Buy Now</string>
+</resources>

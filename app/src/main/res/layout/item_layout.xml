@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="estateList"
+            type="com.kenbu.marssale.model.RealEstateModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/land_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_6sdp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/itemView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_204sdp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="Image"
+            android:get_api_image="@{estateList.img_src}"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundedCornersImageView" />
+
+        <TextView
+            android:id="@+id/land_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_17sdp"
+            android:layout_marginEnd="@dimen/_32sdp"
+            android:fontFamily="@font/roboto"
+            android:text="@{estateList.id}"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="@+id/itemView"
+            app:layout_constraintTop_toBottomOf="@+id/itemView"
+            tools:text="DENEME"
+            tools:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/land_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/roboto"
+            android:text="@{String.valueOf(estateList.price)+`$`}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintStart_toStartOf="@+id/itemView"
+            app:layout_constraintTop_toBottomOf="@+id/itemView"
+            tools:text="DENEME"
+            tools:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/map_icon"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/itemView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/land_id"
+            app:layout_constraintTop_toBottomOf="@+id/itemView"
+            app:srcCompat="@drawable/plot1" />
+
+        <TextView
+            android:id="@+id/item_status_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:fontFamily="@font/lora"
+
+            android:textColor="@color/white"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintStart_toStartOf="@+id/itemView"
+            app:layout_constraintTop_toTopOf="@+id/itemView" />
+
+<!--            android:text="@{estateList.type}"-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

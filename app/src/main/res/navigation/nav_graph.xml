@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.kenbu.marssale.view.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_welcomeFragment_to_catalogFragment"
+            app:destination="@id/catalogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/catalogFragment"
+        android:name="com.kenbu.marssale.view.CatalogFragment"
+        android:label="CatalogFragment"
+        tools:layout="@layout/fragment_catalog">
+        <action
+            android:id="@+id/action_catalogFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.kenbu.marssale.view.DetailsFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_details"
+       >
+        <argument
+            android:name="estateList"
+            app:argType="com.kenbu.marssale.model.RealEstateModel" />
+
+    </fragment>
+</navigation>
